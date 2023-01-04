@@ -1,7 +1,6 @@
 .sendForm {
-    padding-left: 40px;
     display: grid;
-    grid-template-columns: 70px 976px 44px 120px ;
+    grid-template-columns: 30px 976px 44px 120px ;
     grid-template-rows: 40px;
     margin-top: 150px;
     font-family: 'Montserrat', sans-serif;
