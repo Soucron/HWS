@@ -1,31 +1,99 @@
 .message {
-
+    display: grid;
+    grid-template-rows: auto 17px;
+    grid-template-columns: 527px 48px;
+    justify-content: right;
+    padding-right: 40px;
 }
 
 .imageAndText {
-
+    display: grid;
+    grid-template-columns: 512px 15px 48px;
+    grid-auto-rows: minmax(60px, auto);
 }
 
 .imageAndText img {
+    display: grid;
+    grid-column-start: 3;
+    width: 48px;
+    height: 48px;
+    align-self: end;
+    justify-self: end;
 
 }
 
 .text {
+    display: grid;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    background: blue;
+    grid-auto-columns: 512px;
+
+    border-radius: 10px 10px 0 10px;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+
+
 
 }
 
 .text:after {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    align-self: end;
+    content: '';
+    height: 0;
+    width: 0;
+    border-bottom: 20px solid blue;
+    border-right: 20px solid transparent;
+
+
 
 }
 
+
 .name {
+    display: grid;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    justify-items: end;
+    padding-top: 8px;
+    padding-right: 25px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+
+
 
 }
 
 .messageText {
+    display: grid;
+    grid-column-start: 1;
+    padding-bottom: 8px  ;
+    margin-right: 25px;
+    margin-left: 15px;
+    grid-row-start: 2;
+    grid-auto-columns: 512px;
 
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .time {
+    display: grid;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
 
 }

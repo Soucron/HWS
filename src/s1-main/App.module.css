@@ -3,9 +3,22 @@
 }
 
 .hw {
-
+    position: absolute;
+    width: 1280px;
+    top: 168px;
+    border-top: 10px;
 }
 
 .hwTitle {
-
+    position: absolute;
+    width: 165px;
+    height: 27px;
+    left: 70px;
+    top: 131px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: black;
 }
