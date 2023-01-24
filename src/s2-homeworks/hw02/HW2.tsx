@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
+import affair from './affairs/affair/Affair';
 
 /*
 * 1 - описать типы AffairPriorityType, AffairType
@@ -17,17 +18,17 @@ import s2 from '../../s1-main/App.module.css'
 * */
 
 // types
-export type AffairPriorityType = string
+export type AffairPriorityType = "low" | "middle" | "high" // need to fix any
 export type AffairType = {
-    _id: number
-    name: string
+    _id: number // need to fix any
+    name: string // need to fix any
     priority: AffairPriorityType
 }
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
-const defaultAffairs: Array<AffairType> = [
-    {_id: 1, name: 'React', priority: 'high'},
+const defaultAffairs: AffairType[] = [ // need to fix any
+    {_id: 1, name: 'React', priority: 'high'}, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
     {_id: 4, name: 'work', priority: 'high'},
@@ -35,20 +36,23 @@ const defaultAffairs: Array<AffairType> = [
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: Array<AffairType>, filter: string): Array<AffairType> => {
-    return filter === 'all' ? affairs.filter(el => el) : affairs.filter(el => el.priority === filter)
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any
+    if (filter == "all") return affairs
+    else return affairs.filter(el => el.priority == filter)
+    // need to fix
 }
-export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => {
-    return affairs.filter(el => el._id !== _id)
+export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
+
+    return affairs.filter(el => el._id != _id) // need to fix
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: number) => {
-        let newAffairsList = affairs.filter(el => el._id !== _id)
+    const deleteAffairCallback = (_id: number) => { // need to fix any
+        let newAffairsList = affairs.filter(el => el._id != _id)
         setAffairs(newAffairsList)
     }
 
