@@ -3,8 +3,6 @@ import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
 import user from '../hw08/User';
-import {Dispatch} from 'react';
-import {SetStateAction} from 'react';
 
 /*
 * 1 - описать тип UserType
