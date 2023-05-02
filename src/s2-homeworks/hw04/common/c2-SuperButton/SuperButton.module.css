@@ -1,36 +1,75 @@
 .button {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border-radius: 4px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3775dd;
+    box-shadow: 0 2px #21487f;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    vertical-align: top;
+
 }
 
 .disabled {
+    background-color: #6c87b5;
+    pointer-events: none;
 }
 
 .secondary {
+
+    border: #0066cc 1px solid;
+    color: #3775dd;
+    background-color: #fff;
+
 }
 
 .default {
+    border: none;
 }
 
 .red {
+    border: red 1px solid;
+    background-color: #f60808;
+
 }
 
 .default:hover {
+    background-color: #5048ea !important;
 }
 
 .red:hover {
+    background-color: #b90303 !important;
 }
 
 .secondary:hover {
+    background-color: #1c95c0 !important;
 }
 
 
 .default:active {
+    background-color: #0a02ff !important;
 }
 
 .secondary:active {
+    background-color: #2f599e !important;
 }
 
 .red:active {
+    background-color: #860707 !important;
 }
 
 .button:disabled {
+    pointer-events: none;
+    opacity: 0.65;
 }
