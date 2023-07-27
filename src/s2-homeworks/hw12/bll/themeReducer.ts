@@ -23,4 +23,4 @@ type changeThemeIdAT = {
     id: number
 }
 
-export const changeThemeId = (id: number): any => ({ type: 'SET_THEME_ID', id }) // fix any
+export const changeThemeId = (id: number): changeThemeIdAT => ({ type: 'SET_THEME_ID', id }) // fix any

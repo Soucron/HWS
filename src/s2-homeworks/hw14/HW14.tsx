@@ -34,7 +34,7 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                // делает студент
+                // делает   студент
 
                 // сохранить пришедшие данные
 

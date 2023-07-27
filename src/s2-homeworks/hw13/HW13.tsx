@@ -7,6 +7,8 @@ import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
+import {Simulate} from 'react-dom/test-utils';
+import error = Simulate.error;
 
 /*
 * 1 - дописать функцию send
@@ -36,14 +38,33 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText(res.data.errorText)
+                setInfo(res.data.info)
                 // дописать
 
             })
             .catch((e) => {
-                // дописать
-
-            })
+                if (e.response.status === 500) {
+                    setCode(`Ошибка ${e.response.status} !`)
+                    setImage(error500)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                }
+                if (e.response.status === 400) {
+                    setCode(`Ошибка ${e.response.status} !`)
+                    setImage(error400)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                } else {
+                    setCode(`Error`)
+                    setImage(errorUnknown)
+                    setText(e.message)
+                    setInfo(e.name)
+                }
+        })
     }
+
+    const isDisabled = info === '...loading'
 
     return (
         <div id={'hw13'}>
@@ -55,7 +76,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={isDisabled}
 
                     >
                         Send true
@@ -64,7 +85,8 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={isDisabled}
+
 
                     >
                         Send false
@@ -74,6 +96,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
+                        disabled={isDisabled}
 
                     >
                         Send undefined
@@ -83,6 +106,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
+                        disabled={isDisabled}
 
                     >
                         Send null
