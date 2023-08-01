@@ -49,8 +49,7 @@ const HW13 = () => {
                     setImage(error500)
                     setText(e.response.data.errorText)
                     setInfo(e.response.data.info)
-                }
-                if (e.response.status === 400) {
+                } else if (e.response.status === 400) {
                     setCode(`Ошибка ${e.response.status} !`)
                     setImage(error400)
                     setText(e.response.data.errorText)
