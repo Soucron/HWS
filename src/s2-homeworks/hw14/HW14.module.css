@@ -1,7 +1,11 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+}
 .tech {
 
 }
 
 .loading {
-
 }

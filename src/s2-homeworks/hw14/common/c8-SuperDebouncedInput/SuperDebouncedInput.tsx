@@ -39,7 +39,7 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
             setTimerId(window.setTimeout ( () => {
                 onDebouncedChange(value)
                 setTimerId(undefined)
-            }) )
+            } , 1500 ))
             //
         }
     }
